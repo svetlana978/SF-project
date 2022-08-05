@@ -5,7 +5,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -16,15 +15,12 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
     <title>SF-AdTech</title>
-    
-    
 </head>
 
 <body>
 <?php include 'header.php'; ?>
 <div class="container pt-4">
     <h1 class="mb-4"><a href="<?php echo URL; ?>">Offers</a></h1>
-
     <div class="mb-4" id="table">
         <?php 
         if ($_SESSION['auth'] == 1) {

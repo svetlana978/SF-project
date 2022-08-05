@@ -12,8 +12,7 @@ foreach ($message as $key => $value) {
 }
 
 foreach ($arr as $key =>$value) {
-    $of_nam[$key] = $value[3];
-    
+    $of_nam[$key] = $value[3];  
 }
 
 $count_day = 0;

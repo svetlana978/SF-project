@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include "../db/dbConnect.php";
 
 if(isset($_POST['submit']))
@@ -15,6 +14,7 @@ if(isset($_POST['submit']))
     {
         $err[] = "Логин должен быть не меньше 3-х символов и не больше 30";
     } 
+
     // проверяем, не существует ли пользователя с таким именем
     $log = $_POST['login'];
     $role = $_POST['role'];
@@ -41,25 +41,21 @@ if(isset($_POST['submit']))
         {
             $r = 'wm';
         }
-        
        
-        // Убираем лишние пробелы и делаем двойное хэширование (используем старый метод md5)
         $password = md5(md5(trim($_POST['password']))); 
-        mysqli_query($link,"INSERT INTO users (login, password, role) VALUES ('$log', '$password', '$r')");
+        mysqli_query($link,"INSERT INTO `users` (login, password, role) VALUES ('$log', '$password', '$r')");
          
-        $query = "SELECT `user_id` FROM `users` WHERE login='$log'";
+        $query = "SELECT `user_id` FROM `users` WHERE `login`='$log'";
         $result = mysqli_query($link, $query) or die(mysqli_error($link));
         $user_id = current(mysqli_fetch_assoc($result));
 
         $_SESSION['auth'] = 1;
         $_SESSION['user_id'] = $user_id;
-        $_SESSION['login'] = $log;
+        $_SESSION['login'] = $log; 
         $_SESSION['role'] = $r;
         header("Location: /index.php");
         exit();
-    }
-    else
-    {
+    } else {
         print "<b>При регистрации произошли следующие ошибки:</b><br>";
         foreach($err AS $error)
         {
@@ -68,6 +64,7 @@ if(isset($_POST['submit']))
     }
 }
 ?> 
+
 <form method="POST">
 <input type="text" name="login" placeholder="Логин" required><br/>
 <input type="password" name="password" placeholder="Пароль" required> <br>

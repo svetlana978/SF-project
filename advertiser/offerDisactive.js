@@ -1,4 +1,4 @@
-function show_messages(a) {
+function show_messages() {
     $.ajax({
         url: 'advertiser/offers.php',
         cache: false,
@@ -50,8 +50,8 @@ document.addEventListener('click', function() {
             error: function() {
                 console.log('Ошибка!');
             },
-            success: function(a) {
-                show_messages(a);
+            success: function() {
+                show_messages();
             }
         })
     }

@@ -15,7 +15,7 @@ if ($a == 'YES') {
   $query_change_activity = "UPDATE `offers` SET `activity` = 'NO' WHERE `offer_name` = '$offer_name'";
   } else {
   $query_change_activity = "UPDATE `offers` SET `activity` = 'YES' WHERE `offer_name` = '$offer_name'";
-}
+  }
 
 $result = mysqli_query($link, $query_change_activity) or die(mysqli_error($link));
 

@@ -2,9 +2,6 @@
     display: none;
 }
 
-
-/* Открываем lightbox */
-
 .lightbox:target {
     position: absolute;
     left: 0;
@@ -16,18 +13,12 @@
     justify-content: center;
 }
 
-
-/* Содержимое lightbox  */
-
 .lightbox .window {
     width: 25rem;
     position: relative;
     padding: 1.5em;
     background-color: rgb(172, 185, 255);
 }
-
-
-/* Кнопка закрытия */
 
 .lightbox .close {
     position: relative;
@@ -50,9 +41,6 @@
     content: "×";
     cursor: pointer;
 }
-
-
-/* Обёртка lightbox  */
 
 .lightbox .close::before {
     left: 0;

@@ -46,11 +46,12 @@ if($result_offers != NULL) {
         echo "There are no active offers";
     }                  
 } 
-    
-//////////
+?>    
+
+<!-- //////////
 //////////вывод на экран моих подписок на предложения
-//////////
-?>
+////////// -->
+
 <br>
 <h1><a href="<?php echo URL; ?>">My subscribtions</a></h1>
  
@@ -61,7 +62,7 @@ $result_Subscr = mysqli_query($link, $query_Subscr) or die(mysqli_error($link));
 if(mysqli_fetch_assoc($result_Subscr) == NULL) {       
     echo "You are not subscribed to any offer";        
 } else {
-    echo "<table><tr><th>Название</th><th>Url</th><th>Тема</th><th>Число подписчиков</th><th>Стоимость перехода</th></tr>";
+    echo "<table><tr><th>Название</th><th>Стоимость перехода</th><th>Тема</th><th>Число подписчиков</th><th>Url</th></tr>";
     foreach($result_Subscr as $row){
         $of_id = $row['offer_id']; 
      
@@ -76,6 +77,9 @@ if(mysqli_fetch_assoc($result_Subscr) == NULL) {
             
             echo "<tr>";
             echo "<td>" . $row['offer_name'] . "</td>";
+            echo "<td>" . $link_cost . "</td>";
+            echo "<td>" . $row['theme'] . "</td>";
+            echo "<td>" . $row['subscribers'] . "</td>";
             echo "<td>" . "<a href='#link_$of_id'>ссылка</a>" . "</td>";
             ?> 
             
@@ -85,16 +89,10 @@ if(mysqli_fetch_assoc($result_Subscr) == NULL) {
                 <div class="window">
                     Вставьте в код: <br>
                     <?php $urlLink = "https://sf-project/redirectSystem/check.php?utm_source=$webMaster_id&offer_id=$of_id"; ?>   
-                        &lt;a href="<?php echo $urlLink ?>"&gt;реклама&lt;/a&lt; <br>                    
+                        &lt;a href="<?php echo $urlLink ?>"&gt;реклама&lt;/a&gt; <br>                    
                 </div>
             </figure>
             </div>
-            <?php
-            echo "<td>" . $row['theme'] . "</td>";
-            echo "<td>" . $row['subscribers'] . "</td>";
-            echo "<td>" . $link_cost . "</td>";
-            
-            ?>
             <td><input  id="<?php echo $of_id ?>" type="button" class = "unsubscr_button" name="unsubscribe" value="unsubscribe"></input> </td>
             
             <?php  
@@ -149,9 +147,7 @@ if(mysqli_fetch_assoc($result_Subscr) == NULL) {
             </div>
                 
             <?php echo "</tr>";
-            
         } 
     }  
-    echo "</table>";     
-                     
+    echo "</table>";    
 } 

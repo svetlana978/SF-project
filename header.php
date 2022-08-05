@@ -7,7 +7,6 @@
         <div><?php echo "Добро пожаловать, " . $_SESSION['login'] . "!"; ?></div>
         <a href="authorization/logout.php">Выход</a>
         <?php }  ?>
-        
     </div>
 </div>
 </header>

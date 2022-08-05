@@ -6,7 +6,6 @@ $log_string = file_get_contents($file);
 $message=explode("\n",$log_string);
 $arr = [];
 array_pop($message);
-// print_r($message);
 
 foreach ($message as $key => $value) {
     $arr[] = explode("|",$value);
