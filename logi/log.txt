@@ -1,0 +1,9 @@
+14:22:46|01.07.22|https://sf-project/example/advertisedSite.php|c
+14:24:18|01.07.22|https://sf-project/example/advertisedSite.php|w
+14:24:33|01.08.22|https://sf-project/example/advertisedSite.php|c
+14:29:15|01.08.22|https://sf-project/example/advertisedSite3.php|m
+14:29:32|02.08.22|https://sf-project/example/advertisedSite1.php|m
+14:29:38|02.08.22|https://sf-project/example/advertisedSite3.php|z
+12:51:16|05.08.22|https://sf-project/example/advertisedSite3.php|z
+12:51:18|05.08.22|https://sf-project/example/advertisedSite3.php|z
+17:53:19|05.08.22|https://sf-project/example/advertisedSite3.php|z
